@@ -2,12 +2,14 @@ import React from 'react';
 
 import styles from '../patterns/index.css';
 
-export default function ClapIcon({ isClicked }) {
+export default function ClapIcon({ isClicked, setRef }) {
     return (
         <span>
             {' '}
             <svg
+                ref={setRef}
                 id="clapIcon"
+                data-refkey="clapIcon"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="-549 338 100.1 125"
                 className={`${styles.icon} ${isClicked && styles.checked}`}

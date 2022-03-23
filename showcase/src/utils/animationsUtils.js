@@ -1,19 +1,21 @@
 import mojs from 'mo-js';
 
-export const getClapAnimations = (id) => {
+export const getClapAnimations = (input) => {
+    const { clapEl, clapCountTotalEl, clapCountEl } = constructAnimationElementsObject(input);
+
     const TIMELINE_DURATION = 300;
     const COUNT_TOTAL_ANIMATION_DELAY = (3 * TIMELINE_DURATION) / 2;
     const FADE_OUT_COUNT_ANIMATION_DELAY = TIMELINE_DURATION / 2;
 
     const scaleButton = new mojs.Html({
-        el: `#${id}`,
+        el: clapEl,
         duration: TIMELINE_DURATION,
         scale: { 1.3: 1 },
         easing: mojs.easing.ease.out
     });
 
     const countTotalAnimation = new mojs.Html({
-        el: `#clapCountTotal`,
+        el: clapCountTotalEl,
         duration: TIMELINE_DURATION,
         delay: COUNT_TOTAL_ANIMATION_DELAY,
         opacity: { 0: 1 },
@@ -22,7 +24,7 @@ export const getClapAnimations = (id) => {
     });
 
     const countAnimation = new mojs.Html({
-        el: `#clapCount`,
+        el: clapCountEl,
         duration: TIMELINE_DURATION,
         opacity: { 0: 1 },
         y: { 0: -30 },
@@ -34,7 +36,7 @@ export const getClapAnimations = (id) => {
     });
 
     const triangleBurstAnimation = new mojs.Burst({
-        parent: '#clap',
+        parent: clapEl,
         radius: { 50: 95 },
         count: 5,
         angle: 30,
@@ -52,7 +54,7 @@ export const getClapAnimations = (id) => {
     });
 
     const circleBurstAnimation = new mojs.Burst({
-        parent: '#clap',
+        parent: clapEl,
         radius: { 50: 75 },
         angle: 25,
         duration: TIMELINE_DURATION,
@@ -75,4 +77,17 @@ export const getClapAnimations = (id) => {
         triangleBurstAnimation,
         circleBurstAnimation
     };
+};
+
+const constructAnimationElementsObject = (input) => {
+    if (typeof input === 'object') {
+        const { clapEl, clapCountTotalEl, clapCountEl } = input;
+        return { clapEl, clapCountTotalEl, clapCountEl };
+    } else {
+        return {
+            clapEl: `#${input}`,
+            clapCountTotalEl: '#clapCountTotal',
+            clapCountEl: '#clapCount'
+        };
+    }
 };

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import mojs from 'mo-js';
 
-import { getClapAnimations } from './utils/animationsUtils';
+import { getClapAnimations } from '../utils/animationsUtils';
 
 export default function withClapAnimation(WrappedComponent) {
     class WithClapAnimation extends Component {

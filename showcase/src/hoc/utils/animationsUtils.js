@@ -41,7 +41,7 @@ export const getClapAnimations = (id) => {
         children: {
             shape: 'polygon',
             radius: { 6: 0 },
-            stroke: 'rgba(211,54,0,0,0.5)',
+            stroke: 'rgba(211,54,0,0.5)',
             strokeWidth: 2,
             angle: 210,
             delay: 30,
@@ -54,18 +54,17 @@ export const getClapAnimations = (id) => {
     const circleBurstAnimation = new mojs.Burst({
         parent: '#clap',
         radius: { 50: 75 },
-        count: 5,
         angle: 25,
+        duration: TIMELINE_DURATION,
         children: {
             shape: 'circle',
             radius: { 3: 0 },
-            stroke: 'rgba(149,165,166,0,0.5)',
+            fill: 'rgba(149,165,166,0.5)',
             strokeWidth: 2,
             angle: 210,
             delay: 30,
             speed: 0.2,
-            easing: mojs.easing.bezier(0.1, 1, 0.3, 1),
-            duration: TIMELINE_DURATION
+            easing: mojs.easing.bezier(0.1, 1, 0.3, 1)
         }
     });
 

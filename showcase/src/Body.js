@@ -152,7 +152,7 @@ const RouteComponent = ({ pattern, patternNumber, isMediumOrLarger }) => {
                 </Column>
                 <Column leftGap>
                     <Box note={NOTES[patternNumber + 1]} m={!isMediumOrLarger && '15px 0 0 0'}>
-                        <Demo2 ref={clapRef} />
+                        <Demo2 />
                     </Box>
                     {!isMediumOrLarger && (
                         <CTAContainer>

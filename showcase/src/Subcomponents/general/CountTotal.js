@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from '../patterns/index.css';
+import styles from '../../patterns/index.css';
 
 export default function CountTotal({ countTotal, setRef }) {
     return (

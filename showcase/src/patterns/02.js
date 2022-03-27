@@ -1,8 +1,8 @@
 import React, { useState, useCallback } from 'react';
 import { useClapAnimation } from '../customHooks/useClapAnimation.js';
-import ClapCount from '../Subcomponents/ClapCount.js';
-import ClapIcon from '../Subcomponents/ClapIcon.js';
-import CountTotal from '../Subcomponents/CountTotal.js';
+import ClapCount from '../Subcomponents/general/ClapCount.js';
+import ClapIcon from '../Subcomponents/general/ClapIcon.js';
+import CountTotal from '../Subcomponents/general/CountTotal.js';
 
 import styles from './index.css';
 
